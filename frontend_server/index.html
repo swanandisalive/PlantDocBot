@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Disease Detector</title>
+    <style>
+        /* Internal CSS to ensure the UI looks right immediately */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            width: 400px;
+            text-align: center;
+        }
+
+        h1 { color: #2c3e50; margin-bottom: 0.5rem; }
+        p { color: #7f8c8d; margin-bottom: 1.5rem; }
+
+        /* Input Fields Styling */
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #34495e;
+        }
+
+        /* The Description Box */
+        textarea {
+            width: 100%;
+            height: 80px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box; /* Ensures padding doesn't break width */
+            resize: vertical;
+        }
+
+        /* The File Input - ensured VISIBLE */
+        input[type="file"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #f8f9fa;
+            border: 1px dashed #ccc;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        /* The Analyze Button */
+        button.analyze-btn {
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+
+        button.analyze-btn:hover {
+            background-color: #219150;
+        }
+
+        /* Preview Image */
+        #imagePreview {
+            margin-top: 15px;
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: none; /* Hidden until upload */
+        }
+
+        /* Result Text */
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 6px;
+            background-color: #f8f9fa;
+            display: none; /* Hidden until result */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Plant Disease Detector 🌿</h1>
+        <p>Upload a photo to check plant health.</p>
+
+        <div class="input-group">
+            <label for="plantDescription">Description (Optional):</label>
+            <textarea id="plantDescription" placeholder="E.g., Tomato plant leaves turning yellow..."></textarea>
+        </div>
+        
+        <div class="input-group">
+            <label for="imageInput">Upload Plant Image:</label>
+            <input type="file" id="imageInput" accept="image/*">
+        </div>
+
+        <button class="analyze-btn" type="button" onclick="uploadImage()">Analyze Plant</button>
+
+        <img id="imagePreview" src="" alt="Image Preview">
+        <div id="result"></div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

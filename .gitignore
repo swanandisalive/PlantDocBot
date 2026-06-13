@@ -1,0 +1,17 @@
+# Python caches
+__pycache__/
+*.pyc
+
+# ML Models, Weights, and Checkpoints (The heavy stuff)
+*.safetensors
+*.pth
+*.pkl
+*.bin
+*.pt
+*.zip
+backend_server/results/
+backend_server/plant_bert_model/
+
+# Local Data and Histories
+backend_server/chat_history.json
+backend_server/scan_history.csv
