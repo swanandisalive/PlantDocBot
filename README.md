@@ -1,86 +1,39 @@
 # PlantDocBot: AI-Enabled Plant Disease Diagnosis
 
-PlantDocBot is a multimodal, AI-driven assistant designed for early crop disease detection. By leveraging computer vision and conversational interfaces, the system allows users to upload images of infected leaves or describe symptoms textually to receive immediate diagnostic results and actionable treatment recommendations. 
+PlantDocBot is a multimodal, AI-driven assistant designed for early crop disease detection [1]. By leveraging computer vision and conversational interfaces, the system allows users to upload images of infected leaves or describe symptoms textually to receive immediate diagnostic results and actionable treatment recommendations [1].
 
-The system mitigates the "domain gap" common in laboratory-trained models by utilizing datasets designed for real-world, in-situ field conditions (such as varied lighting, complex backgrounds, and organic leaf damage).
-
----
+The system mitigates the "domain gap" common in laboratory-trained models by utilizing datasets designed for real-world, in-situ field conditions (such as varied lighting, complex backgrounds, and organic leaf damage) [1].
 
 ## 🚀 Features
 
-* **Dual-Input Diagnostics:** Supports both image uploads (leaf scans) and textual symptom descriptions.
-* **Robust Field Performance:** Optimized to handle natural background noise, lighting shifts, and varied leaf orientations.
-* **Actionable Insights:** Provides not just a disease classification, but automated, practical treatment and mitigation steps.
-* **Interactive Dashboard:** Built with a clean, lightweight user interface for rapid prototyping and real-time inference.
+* **Dual-Input Diagnostics:** Supports both image uploads (leaf scans) and textual symptom descriptions [2].
+* **Robust Field Performance:** Optimized to handle natural background noise, lighting shifts, and varied leaf orientations [2].
+* **Actionable Insights:** Provides not just a disease classification, but automated, practical treatment and mitigation steps [2].
+* **Interactive Dashboard:** Built with a clean, lightweight user interface for rapid prototyping and real-time inference [2].
 
----
+## 🛠 Architecture & Tech Stack
 
-## 🛠️ Architecture & Tech Stack
-
-* **Frontend & Deployment:** [Streamlit](https://streamlit.io/) — used to build the interactive web dashboard and decision support system.
-* **Core Languages & Libraries:** Python, OpenCV (image preprocessing), NumPy, and Pandas.
-* **Machine Learning & Vision:** Focused on deep computer vision classification models optimized to close the performance gap between ideal laboratory images and field-captured data.
-
----
+* **Frontend & Deployment:** Streamlit is used to build the interactive web dashboard and decision support system [3]. The user interface also incorporates CSS (16.0%), HTML (12.4%), and JavaScript (8.9%) [4].
+* **Core Languages & Libraries:** Powered primarily by Python (62.7% of the codebase), utilizing OpenCV for image preprocessing, along with NumPy and Pandas [3, 4].
+* **Machine Learning & Vision:** Focused on deep computer vision classification models optimized to close the performance gap between ideal laboratory images and field-captured data [3].
 
 ## 📂 Project Structure
 
 ```text
-├── assets/               # UI components, images, and static graphics
-├── src/                  # Main application source code
-│   ├── app.py            # Streamlit dashboard entry point
-│   ├── model_loader.py   # Code handling inference and preprocessing
-│   └── utils.py          # Helper functions for processing data
-├── models/               # Trained model binaries/weights
-├── requirements.txt      # Python dependencies
-└── README.md             # Project documentation
-
-⚙️ Getting Started
-Prerequisites
-Ensure you have Python 3.9+ installed on your system.
-
-Installation
+PlantDocBot/
+│
+├── backend_server/     # Core application logic, API routing, and ML model inference [5]
+├── frontend_server/    # Streamlit dashboard, UI components, and client-side logic [5]
+├── .gitignore          # Ignored files and environment variables [5]
+└── README.md           # Project documentation [5]
+💻 Installation & Setup
 1. Clone the repository:
-git clone [https://github.com/swanandisalive/PlantDocBot.git](https://github.com/swanandisalive/PlantDocBot.git)
+git clone https://github.com/swanandisalive/PlantDocBot.git
 cd PlantDocBot
-
-2. Create and activate a virtual environment:
-# Windows
-   python -m venv venv
-   .\venv\Scripts\activate
-
-# macOS/Linux
-   python3 -m venv venv
-   source venv/bin/activate
-
+2. Set up a virtual environment (Recommended):
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 3. Install dependencies:
-  pip install -r requirements.txt
-
-Running the Application
-To launch the interactive diagnostic dashboard locally, run:
-  streamlit run src/app.py
-
-Open your browser and navigate to http://localhost:8501 to interact with the bot.
-
-📊 Dataset & Methodology
-Standard datasets often assume pristine conditions (uniform backgrounds, single centered leaves). PlantDocBot focuses on in-situ diagnostic robustness by accounting for real field conditions.
-
-Image Preprocessing: Images are resized, normalized, and augmented to match the input specifications of the underlying deep convolutional network.
-
-Classification & Inference: The input features are extracted via a specialized computer vision pipeline to output highly precise disease categories and matching confidence scores.
-
-🤝 Contributing
-Contributions to improve classification metrics, add support for more plant species, or optimize the user interface are welcome.
-
-Fork the Project
-
-Create your Feature Branch (git checkout -b feature/AmazingFeature)
-
-Commit your Changes (git commit -m 'Add some AmazingFeature')
-
-Push to the Branch (git push origin feature/AmazingFeature)
-
-Open a Pull Request
-
-📄 License
-Distributed under the MIT License. See LICENSE for more information.
+pip install -r requirements.txt 
+4. Run the application:
+streamlit run frontend_server/app.py 
